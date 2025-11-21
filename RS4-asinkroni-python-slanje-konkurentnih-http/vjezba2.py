@@ -27,5 +27,8 @@ async def main():
     for f in gotova_lista:
       i += 1
       print(i, ':', f, '\n')
+    # ILI
+    # for i in range(0, len(gotova_lista)):
+    #   print(i+1, ':', gotova_lista[i], '\n')
 
 asyncio.run(main())
