@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
-import datetime
-from typing import Literal, TypedDict
+from datetime import datetime
+from typing import Literal
+from typing_extensions import TypedDict
 
 class Film(BaseModel):
   id: int
@@ -53,3 +54,18 @@ class CCTV_frame(BaseModel):
   id: int
   vrijeme_snimanja: datetime
   koordinate: tuple[float, float] = (0.0, 0.0)
+
+
+class BaseCar(BaseModel):
+  marka: str
+  model: str
+  godina_proizvodnje: int
+  cijena: float
+  boja: str
+
+class CarResponse(BaseCar):
+  id: int
+  cijena_pdv: float
+
+class CarCreate(BaseCar):
+  pass
